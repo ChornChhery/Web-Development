@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrap">
+      <div id="search-info">
+        <input
+          type="search"
+          id="input"
+          placeholder="Search product name here...."
+        />
+        <button id="search">Search</button>
+      </div>
+      <div id="buttons">
+        <button class="button-value" onclick="filterProduct('all')">All</button>
+        <button class="button-value" onclick="filterProduct('Jacket')">
+          Jacket
+        </button>
+        <button class="button-value" onclick="filterProduct('Pant')">
+          Pant
+        </button>
+        <button class="button-value" onclick="filterProduct('Shirt')">
+          Shirt
+        </button>
+        <button class="button-value" onclick="filterProduct('Shoes')">
+          Shoes
+        </button>
+      </div>
+
+      <div id="products"></div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
