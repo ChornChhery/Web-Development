@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login By Jame</title>
+    <link rel="icon" href="images/user1.PNG">
+
+    <link rel="stylesheet" href="index.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="navbar">
+        <nav>
+            <img src="images/Me.PNG" class="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <img src="images/user1.PNG" class="user" onclick="toggleMenu()">
+
+            <div class="menu-tab" id="Menu">
+                <div class="menu">
+                    <div class="info">
+                        <img src="images/user1.PNG">
+                        <h2>Jame</h2>
+                    </div>
+
+                    <a href="#" class="link">
+                        <img src="images/profile.png">
+                        <p>Edit Profile</p>
+                        <span></span>
+                    </a>
+                    <a href="#" class="link">
+                        <img src="images/setting.png">
+                        <p>Settings & Privacy</p>
+                        <span></span>
+                    </a>
+                    <a href="#" class="link">
+                        <img src="images/help.png">
+                        <p>Help & Support</p>
+                        <span></span>
+                    </a>
+                    <a href="#" class="link">
+                        <img src="images/logout.png">
+                        <p>Logout</p>
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+
+
+        </nav>
+    </div>
+    
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1>Create Account</h1>
+                <div class="icon">
+                    <a href="#" class="icons"><i class='bx bxl-google-plus' ></i></a>
+                    <a href="#" class="icons"><i class='bx bxl-facebook-circle' ></i></a>
+                    <a href="#" class="icons"><i class='bx bxl-github' ></i></a>
+                    <a href="#" class="icons"><i class='bx bxl-linkedin' ></i></a>
+                </div>
+                <span>Register with E-mail</span>
+                <input type="text" placeholder="Enter Your Name">
+                <input type="email" placeholder="Enter Your E-mail">
+                <input type="password" placeholder="Enter Your Password">
+                <button>Sign Up</button>
+            </form>
+        </div>
+ 
+
+        <div class="form-container sign-in">
+            <form>
+                <h1>Sign In</h1>
+                <div class="icon">
+                    <a href="#" class="icons"><i class='bx bxl-google-plus' ></i></a>
+                    <a href="#" class="icons"><i class='bx bxl-facebook-circle' ></i></a>
+                    <a href="#" class="icons"><i class='bx bxl-github' ></i></a>
+                    <a href="#" class="icons"><i class='bx bxl-linkedin' ></i></a>
+                </div>
+                <span>Login with E-mail & Password</span>
+                <input type="text" placeholder="Enter Your Name">
+                <input type="email" placeholder="Enter Your E-mail">
+                <input type="password" placeholder="Enter Your Password">
+                <button>Sign In</button>
+            </form>
+        </div>
+
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome To <br> Login With Jame</h1>
+                    <p>Sign in with ID & Passowrd</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello everyone</h1>
+                    <p>Welcome to my login website</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>   
+
+
+    <script src="index.js"></script>
+</body>
+</html>
