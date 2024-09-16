@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(https://media.istockphoto.com/id/1153032746/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B9%83%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%8A%E0%B8%B4%E0%B8%94%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%9B%E0%B8%8F%E0%B8%B4%E0%B8%97%E0%B8%B4%E0%B8%99%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%99%E0%B8%B2%E0%B8%AC%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%9A%E0%B8%99%E0%B9%82%E0%B8%95%E0%B9%8A%E0%B8%B0-%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A7%E0%B8%B2%E0%B8%87%E0%B9%81%E0%B8%9C%E0%B8%99%E0%B8%AA%E0%B9%8D%E0%B8%B2%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B8%E0%B8%A1%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%98%E0%B8%B8%E0%B8%A3%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B8%AB%E0%B8%A3%E0%B8%B7%E0%B8%AD%E0%B9%81%E0%B8%99%E0%B8%A7%E0%B8%84%E0%B8%B4%E0%B8%94%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A7%E0%B8%B2%E0%B8%87%E0%B9%81%E0%B8%9C%E0%B8%99.jpg?s=612x612&w=0&k=20&c=KUk-29fcdeZuhK89Y3riC6DX3haiCGGqf98qwV5b8EY=);
+}
+
+header {
+  width: 100%;
+  height: 30px;
+  font-weight: 700;
+  font-family: sans-serif;
+  font-size: 25px;
+  background: rgb(178, 156, 156);
+  color: rgb(255, 255, 255);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.container1 {
+  width: 700px;
+  height: 180px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.date {
+  width: 100%;
+  height: 100%;
+  background: rgb(58, 58, 138);
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(40px);
+}
+
+.container1::before {
+  content: "";
+  width: 150px;
+  height: 150px;
+  background: rgb(244, 52, 164);
+  border-radius: 8px;
+  position: absolute;
+  top: -60px;
+  left: -50px;
+  z-index: -1;
+}
+
+.container1::after {
+  content: "";
+  width: 150px;
+  height: 150px;
+  background: rgb(190, 74, 74);
+  border-radius: 50%;
+  position: absolute;
+  right: -40px;
+  bottom: -50px;
+  z-index: -1;
+}
+
+.date span {
+  font-size: 80px;
+  width: 110px;
+  color: white;
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  top: -5%;
+  left: 20px;
+  transform: translate(-45%);
+}
+
+.date span::after {
+  font-size: 20px;
+  position: absolute;
+  bottom: -30px;
+  left: 25px;
+}
+
+#dd::after {
+  content: "DAY";
+}
+
+#mm::after {
+  content: "MONTH";
+}
+
+#yy::after {
+  content: "YEARS";
+}
+
+.container {
+  width: 700px;
+  height: 180px;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.clock {
+  width: 100%;
+  height: 100%;
+  background: rgb(26, 226, 26);
+  border-radius: 25px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  backdrop-filter: blur(40px);
+}
+
+.container::before {
+  content: "";
+  width: 150px;
+  height: 150px;
+  background: rgb(255, 255, 83);
+  border-radius: 10px;
+  position: absolute;
+  top: -60px;
+  left: -40px;
+  z-index: -1;
+}
+
+.container::after {
+  content: "";
+  width: 150px;
+  height: 150px;
+  background: rgb(255, 177, 74);
+  border-radius: 50%;
+  position: absolute;
+  right: -45px;
+  bottom: -50px;
+  z-index: -1;
+}
+.clock span {
+  font-size: 80px;
+  width: 110px;
+  color: white;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  display: inline-block;
+  top: 20%;
+  left: 50px;
+  transform: translate(-45%);
+}
+
+.clock span::after {
+  font-size: 20px;
+  position: absolute;
+  bottom: 60px;
+  left: 20px;
+}
+
+#hrs::after {
+  content: "HOURS";
+}
+
+#min::after {
+  content: "MINUTES";
+}
+
+#sec::after {
+  content: "SECONDS";
+}
+
+footer {
+  width: 100%;
+  height: 30px;
+  font-family: sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: aliceblue;
+  position: fixed;
+  inset: auto 0 0 0;
+  background: black;
+}

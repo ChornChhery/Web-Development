@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Today Website</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>Welcome to Today Website</header>
+
+    <div class="date1">
+      <div class="container1">
+        <div class="date">
+          <span id="dd">00</span>
+          <span>:</span>
+          <span id="mm">00</span>
+          <span>:</span>
+          <span id="yy">0000</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="clock1">
+      <div class="container">
+        <div class="clock">
+          <span id="hrs">00</span>
+          <span>:</span>
+          <span id="min">00</span>
+          <span>:</span>
+          <span id="sec">00</span>
+        </div>
+      </div>
+    </div>
+    <footer>Copyright by Mr.Chhery Chorn</footer>
+    <script>
+      let dd = document.getElementById("dd");
+      let mm = document.getElementById("mm");
+      let yy = document.getElementById("yy");
+      let hrs = document.getElementById("hrs");
+      let min = document.getElementById("min");
+      let sec = document.getElementById("sec");
+
+      setInterval(() => {
+        let currentTime = new Date();
+
+        dd.innerHTML =
+          (currentTime.getUTCDate() < 10 ? "0" : "") + currentTime.getUTCDate();
+        mm.innerHTML =
+          (currentTime.getUTCMonth() < 9 ? "0" : "") +
+          (currentTime.getUTCMonth() + 1);
+        yy.innerHTML =
+          (currentTime.getUTCFullYear() < 2030 ? "" : "") +
+          currentTime.getUTCFullYear();
+
+        hrs.innerHTML =
+          (currentTime.getHours() < 10 ? "0" : "") + currentTime.getHours();
+        min.innerHTML =
+          (currentTime.getMinutes() < 10 ? "0" : "") + currentTime.getMinutes();
+        sec.innerHTML =
+          (currentTime.getSeconds() < 10 ? "0" : "") + currentTime.getSeconds();
+      }, 1000);
+    </script>
+  </body>
+</html>
