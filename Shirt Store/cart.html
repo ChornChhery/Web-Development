@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+  </head>
+  <body>
+    <section id="header">
+      <a href="#"><img src="logo.PNG" class="logo" alt="" /></a>
+
+      <div>
+        <ul id="navbar">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li id="lg-bag">
+            <a class="active" href="cart.html"
+              ><i class="far fa-shopping-cart"></i
+            ></a>
+          </li>
+          <a href="#" id="close"><i class="far fa-times"></i></a>
+        </ul>
+      </div>
+      <div id="mobile">
+        <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
+        <i id="bar" class="fas fa-outdent"></i>
+      </div>
+    </section>
+
+    <section id="page-header" class="about-header">
+      <h2>Add Cart Items</h2>
+
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </section>
+
+    <section id="cart" class="section-p1">
+      <table width="100%">
+        <thead>
+          <tr>
+            <td>Remove</td>
+            <td>Image</td>
+            <td>Product</td>
+            <td>Price</td>
+            <td>Quantity</td>
+            <td>Subtotal</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a href="#"><i class="far fa-times-circle"></i></a>
+            </td>
+            <td>
+              <img src="Men Fashion/21.jpg" alt="" />
+            </td>
+            <td>Summer Outfit</td>
+            <td>฿ 599.00</td>
+            <td><input type="number" value="1" /></td>
+            <td>฿ 599.00</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="#"><i class="far fa-times-circle"></i></a>
+            </td>
+            <td>
+              <img src="Men Fashion/22.jpg" alt="" />
+            </td>
+            <td>University Outfit</td>
+            <td>฿ 299.00</td>
+            <td><input type="number" value="1" /></td>
+            <td>฿ 299.00</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="#"><i class="far fa-times-circle"></i></a>
+            </td>
+            <td>
+              <img src="Men Fashion/23.jpg" alt="" />
+            </td>
+            <td>Street Outfit</td>
+            <td>฿ 399.00</td>
+            <td><input type="number" value="1" /></td>
+            <td>฿ 399.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="cart-add" class="section-p1">
+      <div id="coupon">
+        <h3>Apply Coupon</h3>
+        <div>
+          <input type="text" placeholder="Enter Your Coupon" />
+          <button class="normal">Apply</button>
+        </div>
+      </div>
+
+      <div id="subtotal">
+        <h3>Cart Totals</h3>
+        <table>
+          <tr>
+            <td>Cart Subtotal</td>
+            <td>฿ 0.00</td>
+          </tr>
+          <tr>
+            <td>Shipping</td>
+            <td>Free</td>
+          </tr>
+          <tr>
+            <td><strong>Total</strong></td>
+            <td><strong>฿ 0.00</strong></td>
+          </tr>
+        </table>
+        <button class="normal">Procced to checkout</button>
+      </div>
+    </section>
+
+    <footer class="section-p1">
+      <div class="col">
+        <img src="logo.PNG" alt="" />
+        <h4>Contact</h4>
+        <p><strong>Address: </strong> 181 Pattani , PSU , Thailand</p>
+        <p><strong>Phone: </strong>++66 0301248290</p>
+        <p><strong>Hours: </strong>10:00 - 18:00 , Mon-Sat</p>
+        <div class="follow">
+          <h4>Follow us</h4>
+          <div class="icon">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-pinterest-p"></i>
+            <i class="fab fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <h4>About</h4>
+        <a href="#">About us</a>
+        <a href="#">Delivery Infomation</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Contact us</a>
+      </div>
+
+      <div class="col">
+        <h4>My Account</h4>
+        <a href="#">Sign In</a>
+        <a href="#">View Cart</a>
+        <a href="#">My wishlist</a>
+        <a href="#">Track My order</a>
+        <a href="#">Help</a>
+      </div>
+
+      <div class="col install">
+        <h4>Install App</h4>
+        <p>From App Store or Google Play</p>
+        <div class="row">
+          <img
+            src="https://img.icons8.com/?size=100&id=fKXXelWgP1B6&format=png&color=000000"
+            alt=""
+          />
+          <img
+            src="https://img.icons8.com/?size=100&id=30368&format=png&color=000000"
+            alt=""
+          />
+        </div>
+        <p>Secured Payment Gateways</p>
+        <img
+          src="https://img.icons8.com/?size=100&id=E7Ampp9FmdxI&format=png&color=000000"
+          alt=""
+        />
+      </div>
+
+      <div class="copyright">
+        <p>Copyright by Mr.Chhery Chorn - No one can copy my website</p>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+    <script>
+      // JavaScript for calculating the price based on quantity
+      window.onload = function () {
+        // Select all quantity input fields and their corresponding products
+        const rows = document.querySelectorAll("tbody tr");
+
+        // Cart subtotal and total fields
+        const cartSubtotal = document.querySelector(
+          "#subtotal table tr:nth-child(1) td:nth-child(2)"
+        );
+        const cartTotal = document.querySelector(
+          "#subtotal table tr:nth-child(3) td:nth-child(2)"
+        );
+
+        // Cart item count field (you can add an element in HTML where this will be shown)
+        const cartItemCount = document.querySelector("#cart-item-count"); // You should have an element with id="cart-item-count" in your HTML
+
+        // Function to update the subtotal for each product and the total cart amount
+        function updateCart() {
+          let total = 0;
+          let totalItems = 0;
+
+          rows.forEach((row) => {
+            const quantityInput = row.querySelector('input[type="number"]');
+            const priceField = row.querySelector("td:nth-child(4)");
+            const subtotalField = row.querySelector("td:nth-child(6)");
+
+            // Get the price from the price field and parse it as a float
+            const productPrice = parseFloat(
+              priceField.textContent.replace("฿", "").trim()
+            );
+            let quantityValue = parseInt(quantityInput.value);
+
+            // Ensure the quantity is at least 0
+            if (quantityValue < 0) {
+              quantityValue = 0;
+              quantityInput.value = 0; // Reset input value to 0 if it's negative
+            }
+
+            // Calculate the new subtotal for this product
+            const newSubtotal = productPrice * quantityValue;
+
+            // Update the subtotal field
+            subtotalField.textContent = `฿ ${newSubtotal.toFixed(2)}`;
+
+            // Add this product's subtotal to the total cart amount
+            total += newSubtotal;
+
+            // Add the quantity to the total number of items
+            totalItems += quantityValue;
+          });
+
+          // Update cart subtotal and total
+          cartSubtotal.textContent = `฿ ${total.toFixed(2)}`;
+          cartTotal.textContent = `฿ ${total.toFixed(2)}`;
+
+          // Update cart item count (if you have a place to display it)
+          if (cartItemCount) {
+            cartItemCount.textContent = totalItems; // Update the displayed item count
+          }
+        }
+
+        // Add event listeners to all quantity input fields
+        rows.forEach((row) => {
+          const quantityInput = row.querySelector('input[type="number"]');
+          quantityInput.addEventListener("input", updateCart); // Use 'input' for real-time updates
+        });
+
+        // Initial calculation to set the totals correctly on page load
+        updateCart();
+      };
+    </script>
+    <script>
+      window.onload = function () {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        const cartTableBody = document.querySelector("tbody");
+        const cartSubtotal = document.querySelector(
+          "#subtotal table tr:nth-child(1) td:nth-child(2)"
+        );
+        const cartTotal = document.querySelector(
+          "#subtotal table tr:nth-child(3) td:nth-child(2)"
+        );
+
+        let total = 0;
+
+        // Function to render the cart items in the table
+        function renderCartItems() {
+          cartTableBody.innerHTML = ""; // Clear the table body
+          total = 0; // Reset total price to recalculate
+
+          cart.forEach((item, index) => {
+            const row = document.createElement("tr");
+
+            row.innerHTML = `
+          <td>
+            <a href="#" onclick="removeItem(${index})"><i class="far fa-times-circle"></i></a>
+          </td>
+          <td><img src="${item.image}" alt="" /></td>
+          <td>${item.name}</td>
+          <td>฿ ${parseFloat(item.price).toFixed(2)}</td>
+          <td><input type="number" value="${
+            item.quantity
+          }" min="1" onchange="updateQuantity(${index}, this.value)" /></td>
+          <td>฿ ${(parseFloat(item.price) * item.quantity).toFixed(2)}</td>
+        `;
+
+            cartTableBody.appendChild(row);
+
+            // Add this product's subtotal to the total cart amount
+            total += parseFloat(item.price) * item.quantity;
+          });
+
+          // Update cart subtotal and total
+          cartSubtotal.textContent = `฿ ${total.toFixed(2)}`;
+          cartTotal.textContent = `฿ ${total.toFixed(2)}`;
+        }
+
+        // Function to update the quantity of an item
+        window.updateQuantity = function (index, quantity) {
+          if (quantity < 1) {
+            quantity = 1;
+          }
+          cart[index].quantity = parseInt(quantity);
+          localStorage.setItem("cart", JSON.stringify(cart));
+          renderCartItems(); // Re-render the cart items
+        };
+
+        // Function to remove an item from the cart
+        window.removeItem = function (index) {
+          cart.splice(index, 1); // Remove the item at the specified index
+          localStorage.setItem("cart", JSON.stringify(cart));
+          renderCartItems(); // Re-render the cart items and update totals
+        };
+
+        renderCartItems(); // Initial render of the cart items
+      };
+    </script>
+
+    <script>
+      window.onload = function () {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        const cartTableBody = document.querySelector("tbody");
+        const cartSubtotal = document.querySelector(
+          "#subtotal table tr:nth-child(1) td:nth-child(2)"
+        );
+        const cartTotal = document.querySelector(
+          "#subtotal table tr:nth-child(3) td:nth-child(2)"
+        );
+
+        let total = 0;
+
+        // Function to render the cart items in the table
+        function renderCartItems() {
+          cartTableBody.innerHTML = ""; // Clear the table body
+
+          cart.forEach((item, index) => {
+            const row = document.createElement("tr");
+
+            row.innerHTML = `
+              <td>
+                <a href="#" onclick="removeItem(${index})"><i class="far fa-times-circle"></i></a>
+              </td>
+              <td><img src="${item.image}" alt="" /></td>
+              <td>${item.name}</td>
+              <td>฿ ${parseFloat(item.price).toFixed(2)}</td>
+              <td><input type="number" value="${
+                item.quantity
+              }" onchange="updateQuantity(${index}, this.value)" /></td>
+              <td>฿ ${(parseFloat(item.price) * item.quantity).toFixed(2)}</td>
+            `;
+
+            cartTableBody.appendChild(row);
+
+            // Update the total price
+            total += parseFloat(item.price) * item.quantity;
+          });
+
+          // Update cart totals
+          cartSubtotal.textContent = `฿ ${total.toFixed(2)}`;
+          cartTotal.textContent = `฿ ${total.toFixed(2)}`;
+        }
+
+        // Function to update the quantity of an item
+        window.updateQuantity = function (index, quantity) {
+          if (quantity < 1) {
+            quantity = 1;
+          }
+          cart[index].quantity = parseInt(quantity);
+          localStorage.setItem("cart", JSON.stringify(cart));
+          renderCartItems(); // Re-render the cart items
+        };
+
+        // Function to remove an item from the cart
+        window.removeItem = function (index) {
+          cart.splice(index, 1); // Remove the item at the specified index
+          localStorage.setItem("cart", JSON.stringify(cart));
+          renderCartItems(); // Re-render the cart items
+        };
+
+        renderCartItems(); // Initial render of the cart items
+      };
+    </script>
+    <script>
+      window.onload = function () {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        const cartTableBody = document.querySelector("tbody");
+        const cartSubtotal = document.querySelector(
+          "#subtotal table tr:nth-child(1) td:nth-child(2)"
+        );
+        const cartTotal = document.querySelector(
+          "#subtotal table tr:nth-child(3) td:nth-child(2)"
+        );
+
+        let total = 0;
+
+        // Function to render the cart items in the table
+        function renderCartItems() {
+          cartTableBody.innerHTML = ""; // Clear the table body
+
+          cart.forEach((item, index) => {
+            const row = document.createElement("tr");
+
+            row.innerHTML = `
+              <td>
+                <a href="#" onclick="removeItem(${index})"><i class="far fa-times-circle"></i></a>
+              </td>
+              <td><img src="${item.image}" alt="" /></td>
+              <td>${item.name}</td>
+              <td>฿ ${parseFloat(item.price).toFixed(2)}</td>
+              <td><input type="number" value="${
+                item.quantity
+              }" onchange="updateQuantity(${index}, this.value)" /></td>
+              <td>฿ ${(parseFloat(item.price) * item.quantity).toFixed(2)}</td>
+            `;
+
+            cartTableBody.appendChild(row);
+
+            // Update the total price
+            total += parseFloat(item.price) * item.quantity;
+          });
+
+          // Update cart totals
+          cartSubtotal.textContent = `฿ ${total.toFixed(2)}`;
+          cartTotal.textContent = `฿ ${total.toFixed(2)}`;
+        }
+
+        // Function to update the quantity of an item
+        window.updateQuantity = function (index, quantity) {
+          if (quantity < 1) {
+            quantity = 1;
+          }
+          cart[index].quantity = parseInt(quantity);
+          localStorage.setItem("cart", JSON.stringify(cart));
+          renderCartItems(); // Re-render the cart items
+        };
+
+        // Function to remove an item from the cart
+        window.removeItem = function (index) {
+          cart.splice(index, 1); // Remove the item at the specified index
+          localStorage.setItem("cart", JSON.stringify(cart));
+          renderCartItems(); // Re-render the cart items
+        };
+
+        renderCartItems(); // Initial render of the cart items
+      };
+    </script>
+  </body>
+</html>
