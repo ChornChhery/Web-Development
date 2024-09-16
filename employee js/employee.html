@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #E91E63; /* Pink color for the header */
+        }
+        button {
+            background-color: #E91E63; /* Pink color for buttons */
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 0.5rem;
+        }
+        button:hover {
+            background-color: #C2185B; /* Darker pink for hover effect */
+        }
+        .form {
+            margin: 1rem 0;
+        }
+        .form label {
+            display: block;
+            margin: 0.5rem 0;
+            font-weight: bold;
+        }
+        .form input {
+            width: calc(100% - 1rem);
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        table th, table td {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        table th {
+            background-color: #E91E63; /* Pink color for table headers */
+            color: #fff;
+        }
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .average {
+            font-weight: bold;
+            background-color: #fce4ec; /* Light pink for average row */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Employee Management</h2>
+        <button onclick="showData()">Show All Employees</button>
+        <div class="form">
+            <h3>Add New Employee</h3>
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" placeholder="Please Enter First Name">
+        </div>
+        <div class="form">
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" placeholder="Please Enter Last Name">
+        </div>
+        <div class="form">
+            <label for="birthDate">Birth Date</label>
+            <input type="date" id="birthDate">
+        </div>
+        <button onclick="addEmployee()">Add Employee</button>
+        <div id="table" class="section"></div>
+    </div>
+
+    <script>
+        let employees = [];
+
+        function calculateAge(birthDate) {
+            const today = new Date();
+            const birthDateObj = new Date(birthDate);
+            let age = today.getFullYear() - birthDateObj.getFullYear();
+            const monthDifference = today.getMonth() - birthDateObj.getMonth();
+            if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDateObj.getDate())) {
+                age--;
+            }
+            return age;
+        }
+
+        function showData() {
+            let sum = 0;
+            let tableContent = "<table><tr><th>No</th><th>Name</th><th>Birth Date</th><th>Age</th></tr>";
+
+            for (let i = 0; i < employees.length; i++) {
+                const age = calculateAge(employees[i].birthDate);
+                sum += age;
+
+                tableContent +=
+                    `<tr>
+                        <td>${i + 1}</td>
+                        <td>${employees[i].firstname} ${employees[i].lastname}</td>
+                        <td>${employees[i].birthDate}</td>
+                        <td>${age}</td>
+                    </tr>`;
+            }
+
+            // Calculate average age and add it as a new row
+            const avg = employees.length ? (sum / employees.length).toFixed(2) : 0;
+            tableContent += `<tr class='average'>
+                                <td colspan='3'>Average Age</td>
+                                <td>${avg}</td>
+                            </tr></table>`;
+
+            document.getElementById("table").innerHTML = tableContent;
+        }
+
+        function addEmployee() {
+            let firstName = document.getElementById("firstname").value;
+            let lastName = document.getElementById("lastname").value;
+            let birthDate = document.getElementById("birthDate").value;
+
+            if (firstName && lastName && birthDate) {
+                employees.push({ firstname: firstName, lastname: lastName, birthDate: birthDate });
+                showData();
+                document.getElementById("firstname").value = "";
+                document.getElementById("lastname").value = "";
+                document.getElementById("birthDate").value = "";
+            } else {
+                alert("Please enter valid data.");
+            }
+        }
+
+        window.onload = function() {
+            showData();
+        };
+    </script>
+    
+</body>
+</html>
