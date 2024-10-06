@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+  </head>
+  <body>
+    <div class="calculator-container">
+  <h1 class="calculator-title">Calculator</h1>
+    <div class="calculator">
+      <div class="memory-indicator" id="memoryIndicator"></div>
+      <input type="text" class="display" id="display" value="0" disabled />
+      <div class="history-panel" id="historyPanel" style="display: none;"></div>
+      <button id="toggleHistoryBtn" onclick="toggleHistory()">History</button>
+      <button id="clearHistoryBtn" onclick="clearHistory()">Clear</button>
+      <div class="angle-units">
+        <label><input type="radio" name="angleUnit" value="degrees" checked /> Degrees</label>
+        <label><input type="radio" name="angleUnit" value="radians" />Radians</label>
+        <label><input type="radio" name="angleUnit" value="grads" /> Grads</label>
+      </div>
+      <div class="buttons">
+        <button onclick="toggleSecond()" id="secondBtn">2nd</button>
+        <button onclick="mathConstant('e')">e</button>
+        <button onclick="memoryOperation('MC')">MC</button>
+        <button onclick="memoryOperation('MR')">MR</button>
+        <button onclick="memoryOperation('M+')">M+</button>
+        <button onclick="memoryOperation('M-')">M-</button>
+        <button onclick="memoryOperation('MS')">MS</button>
+        <button onclick="appendToDisplay('%')">Mod</button>
+        <button onclick="toggleInverse()" id="invBtn">Inv</button>
+        <button onclick="backspace()">←</button>
+
+        <button onclick="mathFunction('floor')">Int</button>
+        <button onclick="trigFunction('sinh')">sinh</button>
+        <button onclick="trigFunction('sin')">sin</button>
+        <button onclick="mathFunction('ln')">ln</button>
+        <button onclick="appendToDisplay('(')">(</button>
+        <button onclick="appendToDisplay(')')">)</button>
+        <button onclick="clearEntry()">CE</button>
+        <button onclick="clearDisplay()">C</button>
+        <button onclick="toggleSign()">±</button>
+        <button onclick="mathFunction('sqrt')">√</button>
+
+        <button onclick="mathFunction('dms')">dms</button>
+        <button onclick="trigFunction('cosh')">cosh</button>
+        <button onclick="trigFunction('cos')">cos</button>
+        <button onclick="mathFunction('pow2')">x²</button>
+        <button onclick="mathFunction('factorial')">n!</button>
+        <button onclick="appendToDisplay('7')">7</button>
+        <button onclick="appendToDisplay('8')">8</button>
+        <button onclick="appendToDisplay('9')">9</button>
+        <button onclick="appendToDisplay('/')">/</button>
+        <button onclick="mathFunction('percent')">%</button>
+
+        <button onclick="trigFunction('tanh')">tanh</button>
+        <button onclick="trigFunction('tan')">tan</button>
+        <button onclick="mathConstant('pi')">π</button>
+        <button onclick="mathFunction('powY')">x<sup>y</sup></button>
+        <button onclick="mathFunction('yRootX')">y√x</button>
+        <button onclick="appendToDisplay('4')">4</button>
+        <button onclick="appendToDisplay('5')">5</button>
+        <button onclick="appendToDisplay('6')">6</button>
+        <button onclick="appendToDisplay('*')">*</button>
+        <button onclick="mathFunction('reciprocal')">1/x</button>
+
+        <button onclick="toggleFE()" id="feBtn">F-E</button>
+        <button onclick="mathFunction('pow10')">10<sup>x</sup></button>
+        <button onclick="mathFunction('log')">log</button>
+        <button onclick="mathFunction('pow3')">x³</button>
+        <button onclick="mathFunction('cbrt')">∛x</button>
+        <button onclick="appendToDisplay('1')">1</button>
+        <button onclick="appendToDisplay('2')">2</button>
+        <button onclick="appendToDisplay('3')">3</button>
+        <button onclick="appendToDisplay('-')">-</button>
+        <button onclick="mathFunction('abs')">|x|</button>
+
+        <button onclick="appendToDisplay('e')">EXP</button>
+        <button onclick="appendToDisplay('0')">0</button>
+        <button onclick="appendToDisplay('.')">.</button>
+        <button onclick="appendToDisplay('+')">+</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="toggleTheme()">Dark</button>
+
+      </div>
+     </div>
+    <p class="author-name">Created by</p>
+    <p class="author-name">6520310018  Ms. Rinlanee Sanghankrit</p>
+    <p class="author-name">65203100203 Mr. Chhery Chorn</p>
+  </div>
+  </body>
+  <!-- Dark/Light mode toggle button -->
+  
+    <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.min.js"></script>
+
+  </body>
+</html>
+<!-- 6520310018 นางสาวริลณี สังหันกฤษ -->
+<!-- 65203100203 Mr. Chhery Chorn  -->
