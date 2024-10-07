@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+  </head>
+  <body>
+    <section id="header">
+      <a href="#"><img src="logo.PNG" class="logo" alt="" /></a>
+
+      <div>
+        <ul id="navbar">
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li id="lg-bag">
+            <a href="cart.html"><i class="far fa-shopping-cart"></i></a>
+          </li>
+          <a href="#" id="close"><i class="far fa-times"></i></a>
+        </ul>
+      </div>
+      <div id="mobile">
+        <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
+        <i id="bar" class="fas fa-outdent"></i>
+      </div>
+    </section>
+
+    <section id="hero">
+      <h4>Exclusive Offer</h4>
+      <h2>Unbeatable Discounts</h2>
+      <h1>Shop the Latest Styles</h1>
+      <p>
+        Grab up to 50% off and enjoy free shipping on all orders. Don't miss out
+        on these limited-time deals!
+      </p>
+      <button>Start Shopping</button>
+    </section>
+
+    <section id="feature" class="section-p1">
+      <div class="fe-box">
+        <img src="Shop/shop.jpg" alt="" />
+        <h6>Free Shipping</h6>
+      </div>
+      <div class="fe-box">
+        <img src="Shop/online order.jpg" alt="" />
+        <h6>Fast Online Orders</h6>
+      </div>
+      <div class="fe-box">
+        <img src="Shop/save money.jpg" alt="" />
+        <h6>Best Prices Guaranteed</h6>
+      </div>
+      <div class="fe-box">
+        <img src="Shop/promotion.jpg" alt="" />
+        <h6>Exclusive Promotions</h6>
+      </div>
+      <div class="fe-box">
+        <img src="Shop/happy.jpg" alt="" />
+        <h6>100% Satisfaction</h6>
+      </div>
+      <div class="fe-box">
+        <img src="Shop/24.jpg" alt="" />
+        <h6>24/7 Customer Support</h6>
+      </div>
+    </section>
+
+    <section id="prodcut1" class="section-p1">
+      <h2>Men's Korean Fashion</h2>
+      <p>
+        Discover the latest trends in men's fashion, from casual wear to
+        statement pieces.
+      </p>
+
+      <div class="pro-container">
+        <div class="pro" data-id="1" onclick="selectProduct(this)">
+          <img src="Men Fashion/1.jpg" alt="" />
+          <div class="des">
+            <span>Men Outfit</span>
+            <h5>Casual Outfit</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>฿ 599</h4>
+          </div>
+          <a href="#" onclick="addToCart(event, this)"
+            ><i class="fal fa-shopping-cart cart"></i
+          ></a>
+        </div>
+        <div class="pro" data-id="2" onclick="selectProduct(this)">
+          <img src="Men Fashion/2.jpg" alt="" />
+          <div class="des">
+            <span>Men Outfit</span>
+            <h5>Shirt Outer</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>฿ 799</h4>
+          </div>
+          <a href="#" onclick="addToCart(event, this)"
+            ><i class="fal fa-shopping-cart cart"></i
+          ></a>
+        </div>
+        <div class="pro" data-id="3" onclick="selectProduct(this)">
+          <img src="Men Fashion/3.jpg" alt="" />
+          <div class="des">
+            <span>Men Outfit</span>
+            <h5>Crewneck</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>฿ 699</h4>
+          </div>
+          <a href="#" onclick="addToCart(event, this)"
+            ><i class="fal fa-shopping-cart cart"></i
+          ></a>
+        </div>
+        <div class="pro" data-id="4" onclick="selectProduct(this)">
+          <img src="Men Fashion/4.jpg" alt="" />
+          <div class="des">
+            <span>Men Outfit</span>
+            <h5>Shirt Outer</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>฿ 499</h4>
+          </div>
+          <a href="#" onclick="addToCart(event, this)"
+            ><i class="fal fa-shopping-cart cart"></i
+          ></a>
+        </div>
+        <div class="pro" data-id="5" onclick="selectProduct(this)">
+          <img src="Men Fashion/5.jpg" alt="" />
+          <div class="des">
+            <span>Men Outfit</span>
+            <h5>Cardigan</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>฿ 899</h4>
+          </div>
+          <a href="#" onclick="addToCart(event, this)"
+            ><i class="fal fa-shopping-cart cart"></i
+          ></a>
+        </div>
+        <div class="pro" data-id="6" onclick="selectProduct(this)">
+          <img src="Men Fashion/6.jpg" alt="" />
+          <div class="des">
+            <span>Men Outfit</span>
+            <h5>Cardigan</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>฿ 899</h4>
+          </div>
+          <a href="#" onclick="addToCart(event, this)"
+            ><i class="fal fa-shopping-cart cart"></i
+          ></a>
+        </div>
+        <div class="pro" data-id="7" onclick="selectProduct(this)">
+          <img src="Men Fashion/7.jpg" alt="" />
+          <div class="des">
+            <span>Men Outfit</span>
+            <h5>Casual Outfit</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>฿ 599</h4>
+          </div>
+          <a href="#" onclick="addToCart(event, this)"
+            ><i class="fal fa-shopping-cart cart"></i
+          ></a>
+        </div>
+        <div class="pro" data-id="8" onclick="selectProduct(this)">
+          <img src="Men Fashion/8.jpg" alt="" />
+          <div class="des">
+            <span>Men Outfit</span>
+            <h5>Button Shirt</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>฿ 499</h4>
+          </div>
+          <a href="#" onclick="addToCart(event, this)"
+            ><i class="fal fa-shopping-cart cart"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="banner" class="section-m1">
+      <h4>Special Repair Services</h4>
+      <h2>Get Up to <span>50% Off</span> on Repairs and Accessories</h2>
+      <p>
+        Keep your favorite items in top condition. Explore our repair services
+        and enjoy great discounts.
+      </p>
+      <button class="normal">Learn More</button>
+    </section>
+    <section id="prodcut1" class="section-p1">
+      <h2>Women's Korean Fashion</h2>
+      <p>
+        Stay ahead of the style curve with our curated collection of women's
+        fashion pieces.
+      </p>
+
+      <div class="pro-container">
+        <div class="pro" data-id="9" onclick="selectProduct(this)">
+          <img src="Women Fashion/2.jpg" alt="" />
+          <div class="des">
+            <span>Women Outfit</span>
+            <h5>Casual Outfit</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>฿ 899</h4>
+          </div>
+          <a href="#" onclick="addToCart(event, this)"
+            ><i class="fal fa-shopping-cart cart"></i
+          ></a>
+        </div>
+        <div class="pro" data-id="10" onclick="selectProduct(this)">
+          <img src="Women Fashion/3.jpg" alt="" />
+          <div class="des">
+            <span>Women Outfit</span>
+            <h5>Knit Vest Outfit</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>฿ 799</h4>
+          </div>
+          <a href="#" onclick="addToCart(event, this)"
+            ><i class="fal fa-shopping-cart cart"></i
+          ></a>
+        </div>
+        <div class="pro" data-id="11" onclick="selectProduct(this)">
+          <img src="Women Fashion/4.jpg" alt="" />
+          <div class="des">
+            <span>Women Outfit</span>
+            <h5>Date Outfit</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>฿ 699</h4>
+          </div>
+          <a href="#" onclick="addToCart(event, this)"
+            ><i class="fal fa-shopping-cart cart"></i
+          ></a>
+        </div>
+        <div class="pro" data-id="12" onclick="selectProduct(this)">
+          <img src="Women Fashion/5.jpg" alt="" />
+          <div class="des">
+            <span>Women Outfit</span>
+            <h5>University Outfit</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>฿ 499</h4>
+          </div>
+          <a href="#" onclick="addToCart(event, this)"
+            ><i class="fal fa-shopping-cart cart"></i
+          ></a>
+        </div>
+        <div class="pro" data-id="13" onclick="selectProduct(this)">
+          <img src="Women Fashion/6.jpg" alt="" />
+          <div class="des">
+            <span>Women Outfit</span>
+            <h5>Shop Outfit</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>฿ 499</h4>
+          </div>
+          <a href="#" onclick="addToCart(event, this)"
+            ><i class="fal fa-shopping-cart cart"></i
+          ></a>
+        </div>
+        <div class="pro" data-id="14" onclick="selectProduct(this)">
+          <img src="Women Fashion/7.jpg" alt="" />
+          <div class="des">
+            <span>Women Outfit</span>
+            <h5>Movie Outfit</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>฿ 399</h4>
+          </div>
+          <a href="#" onclick="addToCart(event, this)"
+            ><i class="fal fa-shopping-cart cart"></i
+          ></a>
+        </div>
+        <div class="pro" data-id="15" onclick="selectProduct(this)">
+          <img src="Women Fashion/8.jpg" alt="" />
+          <div class="des">
+            <span>Women Outfit</span>
+            <h5>Date Outfit</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>฿ 599</h4>
+          </div>
+          <a href="#" onclick="addToCart(event, this)"
+            ><i class="fal fa-shopping-cart cart"></i
+          ></a>
+        </div>
+        <div class="pro" data-id="16" onclick="selectProduct(this)">
+          <img src="Women Fashion/9.jpg" alt="" />
+          <div class="des">
+            <span>Women Outfit</span>
+            <h5>Museum Outfit</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>฿ 799</h4>
+          </div>
+          <a href="#" onclick="addToCart(event, this)"
+            ><i class="fal fa-shopping-cart cart"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <sectiobn id="sm-banner" class="section-p1">
+      <div class="banner-box">
+        <h4>Crazy Deals of the Season</h4>
+        <h2>Buy 1, Get 1 Free!</h2>
+        <p>
+          Upgrade your wardrobe with our exclusive offer. Limited time only!
+        </p>
+        <button class="white">Shop Now</button>
+      </div>
+      <div class="banner-box banner-box2">
+        <h4>Spring/Summer</h4>
+        <h2>up coming season</h2>
+        <span>The best classic dress is on sale at cara</span>
+        <button class="white">Collection</button>
+      </div>
+    </sectiobn>
+
+    <section id="banner3">
+      <div class="banner-box">
+        <h2>Prepare for Winter</h2>
+        <h3>Winter Collection - 50% OFF</h3>
+      </div>
+      <div class="banner-box banner-box2">
+        <h2>Winter Essentials</h2>
+        <h3>Up to 50% OFF</h3>
+      </div>
+      <div class="banner-box banner-box3">
+        <h2>up coming season</h2>
+        <h3>Winter Collection -50% OFF</h3>
+      </div>
+    </section>
+
+    <section id="newseltter" class="section-p1 section-m1">
+      <div class="newstext">
+        <h4>Stay in the Loop!</h4>
+        <p>
+          Sign up for our newsletter and be the first to know about the latest
+          trends and <span>exclusive discounts.</span>
+        </p>
+      </div>
+      <div class="form">
+        <input type="text" placeholder="Your email address" />
+        <button class="normal">Sign Up</button>
+      </div>
+    </section>
+
+    <footer class="section-p1">
+      <div class="col">
+        <img src="logo.PNG" alt="" />
+        <h4>Contact</h4>
+        <p><strong>Address: </strong> 181 Pattani , PSU , Thailand</p>
+        <p><strong>Phone: </strong>++66 0301248290</p>
+        <p><strong>Hours: </strong>10:00 - 18:00 , Mon-Sat</p>
+        <div class="follow">
+          <h4>Follow us</h4>
+          <div class="icon">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-pinterest-p"></i>
+            <i class="fab fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <h4>About</h4>
+        <a href="#">About us</a>
+        <a href="#">Delivery Infomation</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Contact us</a>
+      </div>
+
+      <div class="col">
+        <h4>My Account</h4>
+        <a href="#">Sign In</a>
+        <a href="#">View Cart</a>
+        <a href="#">My wishlist</a>
+        <a href="#">Track My order</a>
+        <a href="#">Help</a>
+      </div>
+
+      <div class="col install">
+        <h4>Install App</h4>
+        <p>From App Store or Google Play</p>
+        <div class="row">
+          <img
+            src="https://img.icons8.com/?size=100&id=fKXXelWgP1B6&format=png&color=000000"
+            alt=""
+          />
+          <img
+            src="https://img.icons8.com/?size=100&id=30368&format=png&color=000000"
+            alt=""
+          />
+        </div>
+        <p>Secured Payment Gateways</p>
+        <img
+          src="https://img.icons8.com/?size=100&id=E7Ampp9FmdxI&format=png&color=000000"
+          alt=""
+        />
+      </div>
+
+      <div class="copyright">
+        <p>Copyright by Mr.Chhery Chorn - No one can copy my website</p>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+    <script>
+      function selectProduct(productElement) {
+        // Capture the product details
+        const productDetails = {
+          id: productElement.getAttribute("data-id"),
+          image: productElement.querySelector("img").src,
+          name: productElement.querySelector("h5").innerText,
+          price: productElement.querySelector("h4").innerText,
+        };
+
+        // Store the product details in localStorage
+        localStorage.setItem("selectedProduct", JSON.stringify(productDetails));
+
+        // Redirect to sproduct.html
+        window.location.href = "sproduct.html";
+      }
+    </script>
+    <script>
+      // Function to add product to the cart
+      function addToCart(event, element) {
+        // Prevent the default anchor click behavior
+        event.preventDefault();
+
+        // Get the product details
+        const productElement = element.closest(".pro");
+        const product = {
+          id: productElement.getAttribute("data-id"),
+          image: productElement.querySelector("img").src,
+          name: productElement.querySelector("h5").textContent,
+          price: productElement
+            .querySelector("h4")
+            .textContent.replace("฿", "")
+            .trim(),
+          quantity: 1,
+        };
+
+        // Get the existing cart from localStorage or initialize an empty array
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Check if the product already exists in the cart
+        const existingProductIndex = cart.findIndex(
+          (item) => item.id === product.id
+        );
+        if (existingProductIndex >= 0) {
+          // If the product already exists, increase its quantity
+          cart[existingProductIndex].quantity += 1;
+        } else {
+          // If the product doesn't exist, add it to the cart
+          cart.push(product);
+        }
+
+        // Save the updated cart to localStorage
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        alert("Product added to cart!");
+      }
+    </script>
+  </body>
+</html>

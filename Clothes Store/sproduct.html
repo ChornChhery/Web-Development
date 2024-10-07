@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+  </head>
+  <body>
+    <section id="header">
+      <a href="#"><img src="logo.PNG" class="logo" alt="" /></a>
+
+      <div>
+        <ul id="navbar">
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li id="lg-bag">
+            <a href="cart.html"><i class="far fa-shopping-cart"></i></a>
+          </li>
+          <a href="#" id="close"><i class="far fa-times"></i></a>
+        </ul>
+      </div>
+      <div id="mobile">
+        <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
+        <i id="bar" class="fas fa-outdent"></i>
+      </div>
+    </section>
+    <section id="prodetails" class="section-p1">
+      <div class="single-pro-image">
+        <img src="Men Fashion/10.jpg" width="100%" id="MainImg" alt="" />
+        <div class="small-img-group">
+          <div class="small-img-col">
+            <img
+              src="Men Fashion/2.jpg"
+              width="100%"
+              class="small-img"
+              alt=""
+            />
+          </div>
+          <div class="small-img-col">
+            <img
+              src="Men Fashion/9.jpg"
+              width="100%"
+              class="small-img"
+              alt=""
+            />
+          </div>
+          <div class="small-img-col">
+            <img
+              src="Men Fashion/6.jpg"
+              width="100%"
+              class="small-img"
+              alt=""
+            />
+          </div>
+          <div class="small-img-col">
+            <img
+              src="Men Fashion/16.jpg"
+              width="100%"
+              class="small-img"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <div class="single-pro-details">
+        <h6>Home / Outfit</h6>
+        <h4>Men's Fashion Outfit</h4>
+        <h2>฿ 499.00</h2>
+        <select name="" id="">
+          <option>Select Size</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+          <option>XXL</option>
+        </select>
+        <input type="number" value="1" id="productQuantity" />
+        <button class="normal" onclick="addToCart()">Add to Cart</button>
+        <h4>Product Details</h4>
+        <span>
+          This product is made from premium, breathable cotton fabric, perfect
+          for everyday wear. Its versatile design allows it to be paired with
+          both casual and semi-formal outfits. Designed to provide maximum
+          comfort while ensuring a stylish look, this outfit is available in
+          multiple sizes to fit your needs.
+
+          <br /><br />
+
+          <strong>Product Features:</strong>
+          <ul>
+            <li>100% cotton for ultimate comfort</li>
+            <li>Machine washable and easy to maintain</li>
+            <li>Available in various sizes (S, M, L, XL)</li>
+            <li>Perfect for casual outings or semi-formal events</li>
+            <li>Durable fabric that resists wear and tear</li>
+          </ul>
+
+          <br />
+
+          <strong>Care Instructions:</strong> Machine wash cold with like
+          colors, tumble dry low, iron if needed.
+        </span>
+      </div>
+    </section>
+    <section id="prodcut1" class="section-p1">
+      <h2>Products Collection</h2>
+      <p>Korean Outfit Collection</p>
+      <div class="pro-container">
+        <div class="pro" data-id="1" onclick="selectProduct(this)">
+          <img src="Women Fashion/19.jpg" alt="" />
+          <div class="des">
+            <span>Women Outfit</span>
+            <h5>Coffee Outfit</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>$ 599</h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+        <div class="pro" data-id="2" onclick="selectProduct(this)">
+          <img src="Men Fashion/19.jpg" alt="" />
+          <div class="des">
+            <span>Men Outfit</span>
+            <h5>Museum Outfit</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>$ 599</h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+        <div class="pro" data-id="3" onclick="selectProduct(this)">
+          <img src="Women Fashion/20.jpg" alt="" />
+          <div class="des">
+            <span>Women Outfit</span>
+            <h5>Date Outfit</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>$ 699</h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+        <div class="pro" data-id="4" onclick="selectProduct(this)">
+          <img src="Men Fashion/20.jpg" alt="" />
+          <div class="des">
+            <span>Men Outfit</span>
+            <h5>Night Outfit</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>$ 399</h4>
+          </div>
+          <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="newseltter" class="section-p1 section-m1">
+      <div class="newstext">
+        <h4>Sign Up for Newseltter</h4>
+        <p>
+          Get E-mail updates about our latest shop and
+          <span>special offers.</span>
+        </p>
+      </div>
+      <div class="form">
+        <input type="text" placeholder="Your email address" />
+        <button class="normal">Sign Up</button>
+      </div>
+    </section>
+
+    <footer class="section-p1">
+      <div class="col">
+        <img src="logo.PNG" alt="" />
+        <h4>Contact</h4>
+        <p><strong>Address: </strong> 181 Pattani , PSU , Thailand</p>
+        <p><strong>Phone: </strong>++66 0301248290</p>
+        <p><strong>Hours: </strong>10:00 - 18:00 , Mon-Sat</p>
+        <div class="follow">
+          <h4>Follow us</h4>
+          <div class="icon">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-pinterest-p"></i>
+            <i class="fab fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <h4>About</h4>
+        <a href="#">About us</a>
+        <a href="#">Delivery Infomation</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Contact us</a>
+      </div>
+
+      <div class="col">
+        <h4>My Account</h4>
+        <a href="#">Sign In</a>
+        <a href="#">View Cart</a>
+        <a href="#">My wishlist</a>
+        <a href="#">Track My order</a>
+        <a href="#">Help</a>
+      </div>
+
+      <div class="col install">
+        <h4>Install App</h4>
+        <p>From App Store or Google Play</p>
+        <div class="row">
+          <img
+            src="https://img.icons8.com/?size=100&id=fKXXelWgP1B6&format=png&color=000000"
+            alt=""
+          />
+          <img
+            src="https://img.icons8.com/?size=100&id=30368&format=png&color=000000"
+            alt=""
+          />
+        </div>
+        <p>Secured Payment Gateways</p>
+        <img
+          src="https://img.icons8.com/?size=100&id=E7Ampp9FmdxI&format=png&color=000000"
+          alt=""
+        />
+      </div>
+
+      <div class="copyright">
+        <p>Copyright by Mr.Chhery Chorn - No one can copy my website</p>
+      </div>
+    </footer>
+
+    <script>
+      const MainImg = document.getElementById("MainImg");
+      const smallimg = document.getElementsByClassName("small-img");
+
+      // Array of all available product images
+      const allImages = [
+        "Men Fashion/2.jpg",
+        "Men Fashion/9.jpg",
+        "Men Fashion/6.jpg",
+        "Men Fashion/16.jpg",
+        "Men Fashion/10.jpg",
+        "Men Fashion/12.jpg",
+        "Men Fashion/13.jpg",
+        "Men Fashion/19.jpg",
+        "Women Fashion/20.jpg",
+        "Women Fashion/19.jpg",
+        "Women Fashion/16.jpg",
+        "Men Fashion/1.jpg",
+        "Men Fashion/3.jpg",
+        "Men Fashion/5.jpg",
+        "Men Fashion/15.jpg",
+        "Men Fashion/18.jpg",
+        "Women Fashion/14.jpg",
+        "Women Fashion/15.jpg",
+        "Women Fashion/17.jpg",
+        "Women Fashion/18.jpg",
+        "Women Fashion/2.jpg",
+        "Women Fashion/4.jpg",
+        "Women Fashion/7.jpg",
+      ];
+
+      // Function to get random images excluding the main product image
+      function getRandomImages(excludeImage, count = 4) {
+        const randomImages = [];
+        const images = allImages.filter((img) => img !== excludeImage); // Exclude the current main image
+
+        while (randomImages.length < count && images.length > 0) {
+          const randomIndex = Math.floor(Math.random() * images.length);
+          randomImages.push(images[randomIndex]);
+          images.splice(randomIndex, 1); // Remove the selected image
+        }
+        return randomImages;
+      }
+
+      // Display the main product and random images
+      window.onload = function () {
+        // Get the product details from localStorage
+        const product = JSON.parse(localStorage.getItem("selectedProduct"));
+
+        if (product) {
+          // Dynamically update the product details in the HTML
+          document.getElementById("MainImg").src = product.image;
+          document.querySelector(".single-pro-details h4").innerText =
+            product.name;
+          document.querySelector(".single-pro-details h2").innerText =
+            product.price;
+
+          // Get random images excluding the main product image
+          const randomImages = getRandomImages(product.image);
+
+          // Update the small images with the random images
+          randomImages.forEach((img, index) => {
+            if (smallimg[index]) {
+              smallimg[index].src = img;
+            }
+          });
+        } else {
+          console.log("No product found in localStorage");
+        }
+      };
+
+      // Small images click functionality
+      smallimg[0].onclick = function () {
+        MainImg.src = smallimg[0].src;
+      };
+      smallimg[1].onclick = function () {
+        MainImg.src = smallimg[1].src;
+      };
+      smallimg[2].onclick = function () {
+        MainImg.src = smallimg[2].src;
+      };
+      smallimg[3].onclick = function () {
+        MainImg.src = smallimg[3].src;
+      };
+    </script>
+    <script>
+      function selectProduct(productElement) {
+        // Capture the product details
+        const productDetails = {
+          id: productElement.getAttribute("data-id"),
+          image: productElement.querySelector("img").src,
+          name: productElement.querySelector("h5").innerText,
+          price: productElement.querySelector("h4").innerText,
+        };
+
+        // Store the product details in localStorage
+        localStorage.setItem("selectedProduct", JSON.stringify(productDetails));
+
+        // Redirect to sproduct.html
+        window.location.href = "sproduct.html";
+      }
+    </script>
+
+    <script src="index.js"></script>
+    <script>
+      function addToCart() {
+        // Create a product object with details from the current page
+        const product = {
+          id: Date.now(), // Unique ID for the product
+          name: document.querySelector(".single-pro-details h4").innerText,
+          price: parseFloat(
+            document
+              .querySelector(".single-pro-details h2")
+              .innerText.replace(/[^\d.-]/g, "") // Removes all non-numeric characters except period (.)
+          ),
+          quantity: parseInt(
+            document.querySelector("input[type='number']").value
+          ),
+          image: document.getElementById("MainImg").src,
+        };
+
+        // Check if the price has been successfully parsed
+        if (isNaN(product.price)) {
+          alert("Price is not valid. Please check the product price.");
+          return;
+        }
+
+        // Get the existing cart from localStorage (or create an empty cart if none exists)
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Check if the product already exists in the cart
+        const existingProductIndex = cart.findIndex(
+          (item) => item.name === product.name
+        );
+
+        if (existingProductIndex !== -1) {
+          // If the product exists, update its quantity
+          cart[existingProductIndex].quantity += product.quantity;
+        } else {
+          // Add the new product to the cart
+          cart.push(product);
+        }
+
+        // Save the updated cart back to localStorage
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        // Notify the user
+        alert("Product added to cart!");
+      }
+    </script>
+  </body>
+</html>
