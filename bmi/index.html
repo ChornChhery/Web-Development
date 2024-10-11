@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+          body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fef9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            margin-left: 35%;
+            height: 100vh;
+          
+        }
+
+        h2 {
+            color: #ff6f61;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            margin-left: 8%;
+         
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input[type="button"] {
+            background-color: #ff6f61;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 5px;
+        }
+
+        input[type="button"]:hover {
+            background-color: #ff4d4d;
+        }
+
+        p {
+            font-size: 16px;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        #demo, #hello, #bmi, #result {
+            margin-top: 10px;
+        }
+
+        #demo {
+            font-style: italic;
+            color: #888;
+        }
+
+        #hello {
+            font-weight: bold;
+            color: #ff6f61;
+        }
+
+        #bmi, #result {
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        let isFormModified = false;
+
+        function clickme() {
+            var fname = document.forms["myform"]["fname"].value;
+            var lname = document.forms["myform"]["lname"].value;
+            var w = parseFloat(document.forms["myform"]["weight"].value);
+            var h = parseFloat(document.forms["myform"]["height"].value);
+            var result = document.querySelector('#result');
+            var bmiResult = document.querySelector('#bmi');
+
+
+            isFormModified = true;
+
+   
+            if (!fname || !lname || isNaN(w) || w <= 0 || isNaN(h) || h <= 0) {
+                let missingFields = [];
+                if (!fname) missingFields.push('First name');
+                if (!lname) missingFields.push('Last name');
+                if (isNaN(w) || w <= 0) missingFields.push('Weight');
+                if (isNaN(h) || h <= 0) missingFields.push('Height');
+
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: `Please provide valid values for the following fields: ${missingFields.join(', ')}`,
+                    footer: '<a href="#">Why do I have this issue?</a>'
+                });
+
+         
+                result.innerHTML = "Result : UnderWeight/Normal/OverWeight";
+                bmiResult.innerHTML = "BMI = ??";
+                return;
+            }
+
+     
+            let bmi = (w / ((h / 100) ** 2)).toFixed(2);
+
+     
+            if (bmi < 18.6) result.innerHTML = "Result: Under Weight";
+            else if (bmi >= 18.6 && bmi < 24.9) result.innerHTML = "Result: Normal";
+            else result.innerHTML = "Result: Over Weight";
+
+       
+            bmiResult.innerHTML = `BMI = <span>${bmi}</span>`;
+
+
+            const Day = ["อาทิตย์", "จันทร์", "อังคาร", "พุธ", "พฤหัสบดี", "ศุกร์", "เสาร์"];
+            const Month = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"];
+            let dd = new Date();
+            let yyyy = dd.getFullYear();
+            let m = dd.getMonth();
+            let d = dd.getDate();
+            let dy = dd.getDay();
+            let times = dd.getTime();
+
+            document.getElementById('demo').innerHTML = "Today is วัน " + Day[dy] + " ที่ " + d + " " + Month[m] + " " + (yyyy + 543) + "<br>CTime = " + (times / (1000 * 60 * 60 * 24 * 365)).toFixed(2);
+            document.getElementById('hello').innerHTML = "Hello " + fname + " " + lname;
+        }
+
+
+        window.addEventListener('beforeunload', function (e) {
+            if (isFormModified) {
+                const confirmationMessage = 'You have unsaved changes. Are you sure you want to leave?';
+                e.preventDefault();
+                e.returnValue = confirmationMessage; 
+                return confirmationMessage; 
+            }
+        });
+
+        
+        function saveChanges() {
+            var fname = document.forms["myform"]["fname"].value;
+            var lname = document.forms["myform"]["lname"].value;
+            var w = parseFloat(document.forms["myform"]["weight"].value);
+            var h = parseFloat(document.forms["myform"]["height"].value);
+
+       
+            if (!fname || !lname || isNaN(w) || w <= 0 || isNaN(h) || h <= 0) {
+                let missingFields = [];
+                if (!fname) missingFields.push('First name');
+                if (!lname) missingFields.push('Last name');
+                if (isNaN(w) || w <= 0) missingFields.push('Weight');
+                if (isNaN(h) || h <= 0) missingFields.push('Height');
+
+               
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: `Please provide valid values for the following fields: ${missingFields.join(', ')}`,
+                    footer: '<a href="#">Why do I have this issue?</a>'
+                });
+                return;
+            }
+
+
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, save it!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: "Saved!",
+                        text: "Your changes have been saved.",
+                        icon: "success"
+                    });
+
+                 
+                    document.forms["myform"]["fname"].value = '';
+                    document.forms["myform"]["lname"].value = '';
+                    document.forms["myform"]["weight"].value = '';
+                    document.forms["myform"]["height"].value = '';
+
+               
+                    document.querySelector('#result').innerHTML = "Result : UnderWeight/Normal/OverWeight";
+                    document.querySelector('#bmi').innerHTML = "BMI = ??";
+                    document.getElementById('hello').innerHTML = "Hello Your first name and last name";
+
+                    
+                    isFormModified = false;
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+<h2>BMI Calculator</h2>
+
+<form name="myform">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" ><br>
+
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname"><br><br>
+
+    <label for="weight">Your weight (kg):</label><br>
+    <input type="text" id="weight" name="weight"><br><br>
+
+    <label for="height">Your height (cm):</label><br>
+    <input type="text" id="height" name="height"><br><br>
+
+    <input type="button" value="Submit" onclick="clickme()">
+    <input type="button" value="Save Changes" onclick="saveChanges()"> 
+</form> 
+
+<p id="demo">Show a date in Thailand example: Fri Aug 2567</p>
+<p id="hello">Hello Your first name and last name</p>
+<p id="bmi">BMI = ??</p>
+<p id="result">Result : UnderWeight/Normal/OverWeight</p>
+
+</body>
+</html>
