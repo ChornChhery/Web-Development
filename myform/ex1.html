@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="form">
+      <h1>Registration Form</h1>
+      <form action="">
+        <div class="input-group">
+          <label for=""><strong>First name : </strong></label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Your First Name"
+            id="fname"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for=""><strong>Last name : </strong></label>
+          <input
+            type="text"
+            placeholder="Enter Your Last Name"
+            id="lname"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for=""><strong>Gender : </strong></label>
+          <input
+            type="radio"
+            style="flex-basis: 0%; margin: 0 1px"
+            name="gender"
+            value="male"
+            id="male"
+          />
+          <label for="">Male</label>
+          <input
+            type="radio"
+            style="flex-basis: 0%; margin: 0 1px"
+            name="gender"
+            value="female"
+            id="female"
+          />
+          <label for="">Female</label>
+          <input
+            type="radio"
+            style="flex-basis: 0%; margin: 0 1px"
+            name="gender"
+            value="N/A"
+            id="N/A"
+            checked
+          />
+          <label for="">N/A</label>
+        </div>
+        <div class="input-group">
+          <label for=""><strong>Date of Birth :</strong></label>
+          <input type="date" required />
+        </div>
+        <div class="input-group">
+          <label for=""><strong>Personal ID :</strong></label>
+          <input
+            type="text"
+            min="2"
+            max="20"
+            placeholder="Enter Your ID"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for=""><strong>Address : </strong></label>
+          <input type="text" placeholder="Enter Your Address" />
+        </div>
+        <div class="input-group">
+          <label for=""><strong>Email :</strong></label>
+          <input type="email" placeholder="Enter Your Email" />
+        </div>
+        <div class="input-group">
+          <label for=""><strong>Tel : </strong></label>
+          <input type="tel" placeholder="Enter Your Phone Number" max="10" />
+        </div>
+
+        <div class="input-group">
+          <label for=""><strong>Parent Full name : </strong></label>
+          <input
+            type="text"
+            placeholder="Enter Your Full Name"
+            title="ซื้อ-สกุล"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label for=""><strong>Phone Number :</strong></label>
+          <input
+            type="tel"
+            placeholder="Phone number"
+            title="เบอร์โทร"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label for=""><strong>Faculty :</strong></label>
+          <select id="" name="faculty" title="เสือกคณะที่มีอยู่" required>
+            <option value="">Faculty of Education</option>
+            <option value="">Faculty of Science and Technology</option>
+            <option value="">Faculty of Nursing</option>
+            <option value="">Faculty of Humanities and Social Sciences</option>
+            <option value="">Faculty of Communication Sciences</option>
+            <option value="">Faculty of Fine and Applied Arts</option>
+            <option value="">Faculty of Political Sciences</option>
+            <option value="">College of Islamic Studies</option>
+            <option value="" selected>Choose your faculty</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for=""><strong>Major : </strong></label>
+          <select id="" name="faculty" title="เสือกเฉพาะ วทท" required>
+            <option value="">MATHEMATICS AND COMPUTER SCIENCE</option>
+            <option value="">AGRICULTURAL TECHNOLOGY</option>
+            <option value="">CHEMISTRY-BIOLOGY</option>
+            <option value="">FISHERY TECHNOLOGY AND INNOVATION</option>
+            <option value="">FOOD SCIENCE AND NUTRITION</option>
+            <option value="">NUTRITION AND DIETETICS</option>
+            <option value="">GREEN INDUSTRIAL CHEMISTRY</option>
+            <option value="">PHYSICS</option>
+            <option value="">RUBBER TECHNOLOGY</option>
+            <option value="" selected>Faculty of Science and Technology</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for=""
+            ><strong
+              >Reason or Why you choose to study this major or faculty:</strong
+            ></label
+          >
+          <br />
+          <textarea
+            rows="5"
+            cols="40"
+            placeholder="Enter Your Reason"
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
