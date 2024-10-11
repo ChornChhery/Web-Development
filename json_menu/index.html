@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fef9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            margin-left: 35%;
+            height: 100vh;
+        }
+        img {
+            width: 100px;
+            height: auto;
+            display: block;
+            margin-bottom: 20px;
+            margin-left: 50px;
+        }
+        .logo{
+            width: 300px;
+            height: auto;
+            margin-left: 90px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input[type="button"] {
+            background-color: #ff6f61;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 5px;
+        }
+
+        input[type="button"]:hover {
+            background-color: #ff4d4d;
+        }
+
+        p {
+            font-size: 16px;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        #demo, #hello, #bmi, #result {
+            margin-top: 10px;
+        }
+
+        #demo {
+            font-style: italic;
+            color: #888;
+        }
+
+        #hello {
+            font-weight: bold;
+            color: #ff6f61;
+        }
+
+        #bmi, #result {
+            font-size: 18px;
+        }
+
+        /* Image styles */
+        .result-image {
+            display: none;
+            max-width: 200px;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            let isFormModified = false;
+
+            function updateDate() {
+                const Day = ["อาทิตย์", "จันทร์", "อังคาร", "พุธ", "พฤหัสบดี", "ศุกร์", "เสาร์"];
+                const Month = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"];
+                let dd = new Date();
+                let yyyy = dd.getFullYear();
+                let m = dd.getMonth();
+                let d = dd.getDate();
+                let dy = dd.getDay();
+
+                $('#demo').html(`วันนี้คือวัน ${Day[dy]} ที่ ${d} ${Month[m]} ${yyyy + 543}`);
+            }
+
+            function clickme() {
+                let fname = $("input[name='fname']").val();
+                let lname = $("input[name='lname']").val();
+                let w = parseFloat($("input[name='weight']").val());
+                let h = parseFloat($("input[name='height']").val());
+                let result = $('#result');
+                let bmiResult = $('#bmi');
+
+                isFormModified = true;
+
+                if (!fname || !lname || isNaN(w) || w <= 0 || isNaN(h) || h <= 0) {
+                    let missingFields = [];
+                    if (!fname) missingFields.push('First name');
+                    if (!lname) missingFields.push('Last name');
+                    if (isNaN(w) || w <= 0) missingFields.push('Weight');
+                    if (isNaN(h) || h <= 0) missingFields.push('Height');
+
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: `กรุณากรอกข้อมูลที่ถูกต้องในฟิลด์: ${missingFields.join(', ')}`,
+                    });
+
+                    result.html("Result : UnderWeight/Normal/OverWeight");
+                    bmiResult.html("BMI = ??");
+                    $('.result-image').hide();
+                    return;
+                }
+
+                let bmi = (w / ((h / 100) ** 2)).toFixed(2);
+                let imageToShow = [];
+                let alertMessage = '';
+                
+
+                if (bmi < 18.6) {
+                    result.html("Result: Under Weight");
+                    imagesToShow = ['Thin.jfif', 'underweight 1.jpg','underweight 2.jpg','thin 1.gif']; // Underweight image
+                    alertMessage = 'คุณต้องกินมากขึ้น!';
+                    alertMessage = 'สุขภาพของคุฌตำกว่า 18.6 คือตำกว่าปกติคุฌต้องเพิ่มนำ้หนัก!';
+                } else if (bmi >= 18.6 && bmi < 24.9) {
+                    result.html("Result: Normal");
+                    imagesToShow = ['normal.webp', 'normal 1.jpg','normal 2.jpg','normal 3.jpg_large']; // Normal weight image
+                    alertMessage = 'สุขภาพดีมาก!';
+                    alertMessage = 'สุขภาพของคุฌอยู่ระหว่าง 18.6 ถึง 24.9 เป็นช่วงที่ดี!';
+                } else {
+                    result.html("Result: Over Weight");
+                    imagesToShow = ['Overweight.jpg', 'overweight 1.jpg','pig.avif','overweight 2.jpg']; // Overweight image
+                    alertMessage = 'คุณควรลดน้ำหนัก!';
+                    alertMessage = 'สุขภาพของคุฌขึ้นกว่า 24.9 คือสู่งกว่าปกติต้องลดน้ำหนัก!';
+                }
+
+                bmiResult.html(`BMI = <span>${bmi}</span>`);
+                $('#hello').html(`Hello ${fname} ${lname}`);
+                $('.result-image').hide(); // Hide all images initially
+                $(`.result-image[src='${imageToShow}']`).show(); // Show the corresponding image
+                Swal.fire({
+                    title: 'BMI Result',
+                    text: alertMessage,
+                    imageUrl: imageToShow,
+                    imageWidth: 400,
+                    imageHeight: 200,
+                     imageAlt: 'BMI Image',
+                    });
+                    let imageHtml = `<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px;">` +
+                                     imagesToShow.map(img => `<img src="${img}" style="width: 200px; height= 200px; border-radius: 5px;">`).join('') +
+                                    `</div>`;
+
+    
+                 Swal.fire({
+                    title: 'BMI Result',
+                    html: `<div>${alertMessage}</div><div>${imageHtml}</div>`,
+                     imageAlt: 'BMI Image',
+                });
+            }
+
+            function saveChanges() {
+                let fname = $("input[name='fname']").val();
+                let lname = $("input[name='lname']").val();
+                let w = parseFloat($("input[name='weight']").val());
+                let h = parseFloat($("input[name='height']").val());
+
+                if (!fname || !lname || isNaN(w) || w <= 0 || isNaN(h) || h <= 0) {
+                    let missingFields = [];
+                    if (!fname) missingFields.push('First name');
+                    if (!lname) missingFields.push('Last name');
+                    if (isNaN(w) || w <= 0) missingFields.push('Weight');
+                    if (isNaN(h) || h <= 0) missingFields.push('Height');
+
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: `กรุณากรอกข้อมูลที่ถูกต้องในฟิลด์: ${missingFields.join(', ')}`,
+                    });
+                    return;
+                }
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "คุณจะไม่สามารถย้อนกลับได้!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, save it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: "Saved!",
+                            text: "Your changes have been saved.",
+                            icon: "success"
+                        });
+
+                        $("input[name='fname']").val('');
+                        $("input[name='lname']").val('');
+                        $("input[name='weight']").val('');
+                        $("input[name='height']").val('');
+                        
+                        $('#result').html("Result : UnderWeight/Normal/OverWeight");
+                        $('#bmi').html("BMI = ??");
+                        $('#hello').html("Hello Your first name and last name");
+                        $('.result-image').hide();
+
+                        isFormModified = false;
+                    }
+                });
+            }
+
+            // Event handlers
+            $("input[type='button'][value='Submit']").on("click", clickme);
+            $("input[type='button'][value='Save Changes']").on("click", saveChanges);
+            updateDate();
+
+            $(window).on('beforeunload', function(e) {
+                if (isFormModified) {
+                    const confirmationMessage = 'คุณมีการเปลี่ยนแปลงที่ยังไม่ได้บันทึก คุณแน่ใจหรือไม่ว่าอยากจะออก?';
+                    e.preventDefault();
+                    e.returnValue = confirmationMessage; 
+                    return confirmationMessage; 
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="logo">
+        <img src="https://png.pngtree.com/png-clipart/20230922/original/pngtree-bmi-cartoon-vector-illustration-depicting-medical-concept-unhealthy-vector-body-vector-png-image_12724237.png" alt="BMI Illustration">
+
+    </div>
+
+    <form name="myform">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br><br>
+
+        <label for="weight">Your weight (kg):</label><br>
+        <input type="text" id="weight" name="weight"><br><br>
+
+        <label for="height">Your height (cm):</label><br>
+        <input type="text" id="height" name="height"><br><br>
+
+        <input type="button" value="Submit">
+        <input type="button" value="Save Changes"> 
+    </form> 
+
+    <p id="demo">Show a date in Thailand example: Fri Aug 2567</p>
+    <p id="hello">Hello Your first name and last name</p>
+    <p id="bmi">BMI = ??</p>
+    <p id="result">Result : UnderWeight/Normal/OverWeight</p>
+
+    <img class="result-image" src="Thin.jfif" alt="Underweight">
+    <img class="result-image" src="underweight 1.jpg" alt="Underweight">
+    <img class="result-image" src="normal.webp" alt="Normal weight">
+    <img class="result-image" src="normal 1.jpg" alt="Normal weight">
+    <img class="result-image" src="Overweight.jpg" alt="Overweight">
+    <img class="result-image" src="overweight 1.jpg" alt="Overweight">
+    
+
+
+</body>
+</html>
